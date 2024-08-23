@@ -2,7 +2,10 @@ let start = document.getElementById("start")
 let quizRules = document.getElementById("rules")
 let exitQuiz = document.getElementById("btn-exit")
 let continueQuiz = document.getElementById("continue-btn")
-let questions = document.getElementById("questions")
+let questions = document.getElementById("question-words")
+let options = document.getElementById("options")
+let next_question = document.getElementById("next-que")
+let question_range = document.getElementById("que-no")
 
 
 
@@ -138,3 +141,31 @@ continueQuiz.addEventListener("click", () => {
     questions.style.display = "flex"
 })
 
+let currentQuestionIndex = 0
+
+function getQuestion(){
+    let currentQuestion = QuestionBank[currentQuestionIndex]
+    questions.textContent = `${currentQuestionIndex + 1}. ${currentQuestion.question}`
+
+    options.innerHTML = ""
+    currentQuestion.incorrect_answers.forEach((option, index) => {
+        let optionBtn = document.createElement("button")
+        optionBtn.setAttribute("value", option)
+        optionBtn.setAttribute("class", "opt-btn")
+        optionBtn.textContent = option
+        options.appendChild(optionBtn)
+    })
+
+    question_range.innerText = `${currentQuestionIndex + 1} of ${QuestionBank.length}`
+}
+
+getQuestion()
+next_question.addEventListener("click", () => {
+    if (currentQuestionIndex < QuestionBank.length -1 ){
+        currentQuestionIndex += 1
+        getQuestion()
+    }
+    else {
+        next_question.innerText = "Finish"
+    }
+})
