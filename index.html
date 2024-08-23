@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="start-modal" id="start">
+            <p class="start">Start</p>
+        </div>
+
+        <div class="rules-modal" id="rules">
+            <div class="heading">
+                <h2>Some Rules of this Quiz</h2>
+            </div>
+
+            <ol class="rules-set">
+                <li>jhdsjkdsjkjkskjsdjkjksjksdjkjkdsjkdjkjkdjdjdjkjdjdjdj</li>
+                <li>jhdsjkdsjkjkskjsdjkjksjksdjkjkdsjkdjkjkdjdjdjkjdjdjdj</li>
+                <li>jhdsjkdsjkjkskjsdjkjksjksdjkjkdsjkdjkjkdjdjdjkjdjdjdj</li>
+                <li>jhdsjkdsjkjkskjsdjkjksjksdjkjkdsjkdjkjkdjdjdjkjdjdjdj</li>
+                <li>jhdsjkdsjkjkskjsdjkjksjksdjkjkdsjkdjkjkdjdjdjkjdjdjdj</li>
+            </ol>
+            <div class="btn-group">
+                <button class="btn btn-exit" id="btn-exit">Exit Quiz</button>
+                <button class="btn btn-primary" id="continue-btn">Continue</button>
+            </div>
+        </div>
+
+        <div class="quiz-card" id="questions">
+            <div class="heading">
+                <h2>Awesome Quiz Application</h2>
+                <p>Time  Left <span>20</span></p>
+            </div>
+
+            <div class="quiz-body">
+                <div class="questions-container">
+                    <h2 id="question-words"></h2>
+                </div>
+                <div class="options" id="options"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
