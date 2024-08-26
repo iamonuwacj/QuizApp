@@ -110,7 +110,7 @@ let questions = [
     {
         numb: 10,
         type: "multiple",
-        question:  "What is the use of the <noscript> tag in Javascript?",
+        question:  "What is the use of the '<noscript>' tag in Javascript?",
         answer: "The contents are displayed by non-JS-based browsers",
         options:  [
             "Clears all the cookies and cache",
