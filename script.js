@@ -686,9 +686,9 @@ next_btn.onclick = ()=>{
         timeText.textContent = "Time Left";
         next_btn.classList.remove("show");
     }else{
-        clearInterval(counter); //clear counter
-        clearInterval(counterLine); //clear counterLine
-        showResult(); //calling showResult function
+        clearInterval(counter); 
+        clearInterval(counterLine); 
+        showResult(); 
     }
 }
 
@@ -696,14 +696,14 @@ next_btn.onclick = ()=>{
 function showQuetions(index){
     const que_text = document.querySelector(".que_text");
 
-    //creating a new span and div tag for question and option and passing the value using array index
+    //creating a new html block for question and option and passing the value using array index
     let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
     let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
-    que_text.innerHTML = que_tag; //adding new span tag inside que_tag
-    option_list.innerHTML = option_tag; //adding new div tag inside option_tag
+    que_text.innerHTML = que_tag; 
+    option_list.innerHTML = option_tag; 
     
     const option = option_list.querySelectorAll(".option");
 
@@ -718,20 +718,20 @@ let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
 //if user clicked on option
 function optionSelected(answer){
-    clearInterval(counter); //clear counter
-    clearInterval(counterLine); //clear counterLine
+    clearInterval(counter); 
+    clearInterval(counterLine); 
     let userAns = answer.textContent; //getting user selected option
-    let correcAns = questions[que_count].answer; //getting correct answer from array
-    const allOptions = option_list.children.length; //getting all option items
+    let correcAns = questions[que_count].answer; 
+    const allOptions = option_list.children.length;
     
     if(userAns == correcAns){ //if user selected option is equal to array's correct answer
         userScore += 1; //upgrading score value with 1
-        answer.classList.add("correct"); //adding green color to correct selected option
+        answer.classList.add("correct"); //add green color to correct selected option
         answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
         console.log("Correct Answer");
         console.log("Your correct answers = " + userScore);
     }else{
-        answer.classList.add("incorrect"); //adding red color to correct selected option
+        answer.classList.add("incorrect"); //add red color to correct selected option
         answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
         console.log("Wrong Answer");
 
@@ -782,7 +782,7 @@ function startTimer(time){
             clearInterval(counter); 
             timeText.textContent = "Time Elasped"; 
             const allOptions = option_list.children.length; 
-            let correcAns = questions[que_count].answer; //getting correct answer from array
+            let correcAns = questions[que_count].answer; //get correct answer from array
             for(i=0; i < allOptions; i++){
                 if(option_list.children[i].textContent == correcAns){ 
                     option_list.children[i].setAttribute("class", "option correct"); //add green color to matched option
